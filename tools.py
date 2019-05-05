@@ -70,7 +70,7 @@ def printf(info, end='\n', mode='common', delayTime=0):
         print(str(info), end=end)
     elif mode == 'delay':
         for i in range(len(str(info))):
-            print(list(str(info))[i], end=end)
+            print(list(str(info))[i], end='')
             sys.stdout.flush()
             time.sleep(delayTime/1000)
         print('', end=end)
