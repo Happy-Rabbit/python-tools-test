@@ -1,6 +1,6 @@
 # coding:utf-8
 
-'''
+r'''
 Happy Rabbit developed this module (so...stupid...and...emmm...)
 
 WARNING!
@@ -28,7 +28,7 @@ import time, sys
 # CLASS AREA!
 
 class ParameterError(Exception):
-    '''
+    r'''
     This Class is used to raised and show the error reason, just like some parameter was given a wrong info...
     '''
     def __init__(self, argsName, argsInfo):
@@ -51,7 +51,7 @@ __email__ = 'happy.rabbit.yy@outlook.com'
 # FUNCTION AREA!
 
 def printf(info, end='\n', mode='common', delayTime=0):
-    '''
+    r'''
     This function just used to show some info at the screen, it has two modes, one of the modes is "common", just print!,
     another is "delay", it can show the information with few miliseconds delay...
 
