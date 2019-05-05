@@ -1,6 +1,36 @@
-#coding:utf-8
+# coding:utf-8
+
+'''
+Happy Rabbit developed this module (so...stupid...and...emmm...)
+
+WARNING!
+    THIS IS JUST A MODULE!
+
+This module just can make me (maybe) feel convenient.
+
+The function(s) in this module is(are):
+    printf
+
+The class(es) in this module is(are):
+    ParameterError
+
+The variable(s) in this module is(are):
+    __all__
+    __author__
+    __email__
+    (maybe and __builtin__ and so on...)
+'''
+
+# IMPORT AREA!
+
+import time, sys
+
+# CLASS AREA!
 
 class ParameterError(Exception):
+    '''
+    This Class is used to raised and show the error reason, just like some parameter was given a wrong info...
+    '''
     def __init__(self, argsName, argsInfo):
         self.argsName = argsName
         self.argsInfo = argsInfo
@@ -10,11 +40,32 @@ class ParameterError(Exception):
         print(self.print)
         return self.error
 
-import time, sys
+# VARIABLE AREA!
 
-__all__ = ['printf', '__all__']
+__all__ = ['printf', '__all__', '__author__', '__email__']
+
+__author__ = 'Happy Rabbit'
+
+__email__ = 'happy.rabbit.yy@outlook.com'
+
+# FUNCTION AREA!
 
 def printf(info, end='\n', mode='common', delayTime=0):
+    '''
+    This function just used to show some info at the screen, it has two modes, one of the modes is "common", just print!,
+    another is "delay", it can show the information with few miliseconds delay...
+
+    Usage:
+    
+    printf(info, end='\n', mode='common', delayTime=0) # return nothing.
+
+    "info" is the message you want to show at the screen.
+    "end" is that when the message is end, what string will be add at the end of the message automatically. default is "\n"
+    "mode" just has two choice (just for this version) "common" and "delay", if you give it another choice,
+        it will raise the "parameterError"! please be carefull when you use it.
+    "delayTime" is an integer variable, if "mode" is "common", then "delayTime" will do nothing, but, if "mode" is "delay",
+        then "delayTime" will control the delay time...
+    '''
     if mode == 'common':
         print(str(info), end=end)
     elif mode == 'delay':
