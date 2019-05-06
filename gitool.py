@@ -27,6 +27,7 @@ def log():
     exit(0)
 
 def upload(choice=0, branchName='master', lists=[]):
+    del lists[0]
     if choice == 0:
         commitNote = str(input("Enter what note you want to announce :\t"))
     else:
@@ -40,7 +41,7 @@ if __name__ == '__main__':
     if lists[1] == 'upload':
         del lists[0]
         del lists[0]
-        upload(1, lists.pop(0), lists)
+        upload(1, lists[0], lists)
     elif lists[1] == 'log':
         log()
     else:
