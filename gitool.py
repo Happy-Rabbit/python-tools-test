@@ -1,14 +1,16 @@
 # coding: utf-8
 
 from time import strftime, localtime
-from os import system
+from os import system, listdir
 from sys import argv
 
 def log():
     nowTime = strftime("%Y-%m-%d-%H-%M-%S", localtime())
     fileName = 'log-'+str(nowTime)+'.txt'
     cmd = 'git log --decorate --oneline --all --graph >> '+fileName
-
+    fileList = listdir()
+    logList = [i for i in fileList if 'log' in i]
+    sorted(logList)
     if system(cmd) == 0:
         print("Finished!")
     else:
