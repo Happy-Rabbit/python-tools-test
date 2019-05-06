@@ -9,7 +9,7 @@ def log():
     fileName = 'log-'+str(nowTime)+'.txt'
     cmd = 'git log --decorate --oneline --all --graph >> '+fileName
 
-    if system(cmd) == o:
+    if system(cmd) == 0:
         print("Finished!")
     else:
         print("Error! Unknown Error!")
