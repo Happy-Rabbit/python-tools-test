@@ -60,6 +60,7 @@ def upload(choice=0, branchName='master', lists=[]):
             print('\t\t'+str(i)+'\t'*(6-len(str(i))//8)+'will be upload!')
     system(r'git commit -m "%s"' %commitNote )
     system('git push -u origin '+branchName)
+    log()
 
 if __name__ == '__main__':
     lists = argv
