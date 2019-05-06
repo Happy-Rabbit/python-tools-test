@@ -105,3 +105,6 @@ venv.bak/
 
 # plain text
 log*.txt
+
+# Python source code
+gitool.py
