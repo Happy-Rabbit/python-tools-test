@@ -3,6 +3,7 @@
 from time import strftime, localtime
 from os import system, listdir
 from sys import argv
+import glob
 
 def log():
     nowTime = strftime("%Y-%m-%d-%H-%M-%S", localtime())
@@ -32,7 +33,27 @@ def upload(choice=0, branchName='master', lists=[]):
         commitNote = str(input("Enter what note you want to announce :\t"))
     else:
         commitNote = ' '.join(lists)
-    system('git add *')
+    openIgnoreFile = open('.gitignore', 'r+')
+    allIgnoreFile = openIgnoreFile.readlines()
+    openIgnoreFile.close()
+    shouldIgnoreFiles = []
+    for i in allIgnoreFile:
+        if '# ' in i:
+            continue
+        else:
+            shouldIgnoreFiles.append(i.replace('\n', ''))
+    foundIgnoreFiles = []
+    for i in shouldIgnoreFiles:
+        tmp = glob.glob(i)
+        if len(tmp) < 1:
+            continue
+        else:
+            foundIgnoreFiles.append(tmp)
+    for i in listdir():
+        if i in foundIgnoreFiles:
+            continue
+        else:
+            system(r'git add "'+str(i)+r'"')
     system(r'git commit -m "%s"' %commitNote )
     system('git push -u origin '+branchName)
 
