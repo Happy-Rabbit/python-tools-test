@@ -48,7 +48,8 @@ def upload(choice=0, branchName='master', lists=[]):
         if len(tmp) < 1:
             continue
         else:
-            foundIgnoreFiles.append(tmp)
+            for j in tmp:
+                foundIgnoreFiles.append(j)
     for i in listdir():
         if i in foundIgnoreFiles:
             continue
