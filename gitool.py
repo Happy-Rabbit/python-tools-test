@@ -54,6 +54,7 @@ def upload(choice=0, branchName='master', lists=[]):
             continue
         else:
             system(r'git add "'+str(i)+r'"')
+            print(str(i)+'\twill be added!')
     system(r'git commit -m "%s"' %commitNote )
     system('git push -u origin '+branchName)
 
