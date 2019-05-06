@@ -45,11 +45,11 @@ def upload(choice=0, branchName='master', lists=[]):
     foundIgnoreFiles = []
     for i in shouldIgnoreFiles:
         tmp = glob.glob(i)
-        if len(tmp) < 1:
-            continue
-        else:
-            for j in tmp:
-                foundIgnoreFiles.append(j)
+        for j in tmp:
+            if len(str(j)) < 1:
+                continue
+            else:
+                foundIgnoreFiles.append(str(j))
     for i in listdir():
         if i in foundIgnoreFiles:
             continue
