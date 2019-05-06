@@ -25,6 +25,7 @@ def log():
             system('rm -rf '+logList[0])
         else:
             pass
+    print('*'*6+'  Log file '+ fileName+' has been added!  '+'*'*6)
     exit(0)
 
 def upload(choice=0, branchName='master', lists=[]):
