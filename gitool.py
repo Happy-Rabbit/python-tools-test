@@ -33,6 +33,7 @@ def upload(choice=0, branchName='master', lists=[]):
         commitNote = str(input("Enter what note you want to announce :\t"))
     else:
         commitNote = ' '.join(lists)
+    print("These file will be add, commit and upload to web  :")
     openIgnoreFile = open('.gitignore', 'r+')
     allIgnoreFile = openIgnoreFile.readlines()
     openIgnoreFile.close()
