@@ -17,7 +17,7 @@ def log():
     logList = [i for i in fileList if 'log' in i]
     logList.sort(reverse=True)
     if len(logList) < 2:
-        pass
+        print('*'*6+'  Log file '+ fileName+' has been added!  '+'*'*6)
     else:
         newFile = open(logList[0], 'r+')
         oldFile = open(logList[1], 'r+')
