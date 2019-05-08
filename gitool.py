@@ -14,6 +14,7 @@ def log():
     else:
         print("Error! Unknown Error!")
     fileList = listdir()
+    logList = []
     for i in fileList:
         if 'log' in i and path.isdir(i) == False:
             logList.append(i)
