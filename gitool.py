@@ -1,7 +1,7 @@
 # coding: utf-8
 
 from time import strftime, localtime
-from os import system, listdir
+from os import system, listdir, path
 from sys import argv
 import glob
 
@@ -14,7 +14,11 @@ def log():
     else:
         print("Error! Unknown Error!")
     fileList = listdir()
-    logList = [i for i in fileList if 'log' in i]
+    for i in fileList:
+        if 'log' in i and path.isdir(i) == False:
+            logList.append(i)
+        else:
+            pass
     logList.sort(reverse=True)
     if len(logList) < 2:
         print('*'*6+'  Log file '+ fileName+' has been added!  '+'*'*6)
