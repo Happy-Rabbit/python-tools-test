@@ -59,7 +59,7 @@ def upload(choice=0, branchName='master', lists=[]):
     for i in listdir():
         if i in foundIgnoreFiles:
             continue
-        elif '.git' in i:
+        elif '.git' in i and '.gitignore' not in i:
             continue
         else:
             system(r'git add "'+str(i)+r'"')
